@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+
+development:
+  <<: *default
+  database: cradle_development
+
+test:
+  <<: *default
+  database: cradle_test
+
+production:
+  <<: *default
+  database: cradle_production
+  username: cradle
+  password: <%= ENV['CRADLE_DATABASE_PASSWORD'] %>
