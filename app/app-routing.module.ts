@@ -1,13 +1,17 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent }   from './dashboard.component';
-import { PostsComponent }      from './posts.component';
-import { PostDetailComponent }  from './post-detail.component';
+import { PostsComponent }      from './posts/posts.component';
+import { VideosComponent }      from './videos/videos.component';
+import { VideoDetailComponent } from './videos/video-detail.component';
+import { PostDetailComponent }  from './posts/post-detail.component';
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard',  component: DashboardComponent },
   { path: 'detail/:id', component: PostDetailComponent },
-  { path: 'posts',     component: PostsComponent }
+  { path: 'posts',     component: PostsComponent },
+  { path: 'videos',     component: VideosComponent },
+  { path: 'videos/:id',     component: VideoDetailComponent }
 ];
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
