@@ -15,6 +15,9 @@ import { PostService }         from './posts/post.service';
 import { VideoDetailComponent }  from './videos/video-detail.component';
 import { VideosComponent }     from './videos/videos.component';
 import { VideoService }         from './videos/video.service';
+import { AlphabetComponent }     from './alphabet/alphabet.component';
+import { LetterDetailComponent } from './alphabet/letter-detail.component';
+import { LetterService }         from './alphabet/letter.service';
 
 @NgModule({
   imports: [
@@ -30,11 +33,14 @@ import { VideoService }         from './videos/video.service';
     PostDetailComponent,
     PostsComponent,
     VideoDetailComponent,
-    VideosComponent
+    VideosComponent,
+    AlphabetComponent,
+    LetterDetailComponent
   ],
   providers: [
     PostService,
-    VideoService
+    VideoService,
+    LetterService
   ],
   bootstrap: [ AppComponent ]
 })
