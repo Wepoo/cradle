@@ -1,0 +1,6 @@
+.letter-card {
+  width:300px;
+  min-height:110px;
+  display:inline-block;
+  margin: 15px;
+}

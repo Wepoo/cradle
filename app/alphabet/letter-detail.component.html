@@ -1,6 +1,10 @@
 <div *ngIf="letter" class="container">
-  <h2>{{letter.name}} details!</h2>
-  <div>
-    <label>id: </label>{{letter.id}}</div>
+  <h1>{{letter.name}}  {{letter.name.toLowerCase()}}</h1>
+  <label>{{letter.position}}-я буква</label>
+  <div *ngIf="letter.words">
+    <div *ngFor="let word of letter.words">
+      {{word.name}}
+    </div>
+  </div>
   <button md-raised-button (click)="goBack()">Back</button>
 </div>
