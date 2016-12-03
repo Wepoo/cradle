@@ -3,14 +3,14 @@ class LettersController < ApplicationController
 
   # GET /letters
   def index
-    @letters = Letter.all
-
-    render json: @letters
+    @letters = Letter.all.includes(:words)
+    render :index
+    # render json: @letters.map { |letter| letter.as_json(only: [:id, :name], include: :words) }
   end
 
   # GET /letters/1
   def show
-    render json: @letter
+    render :show
   end
 
   # POST /letters
