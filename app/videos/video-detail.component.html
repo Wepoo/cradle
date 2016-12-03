@@ -2,6 +2,6 @@
   <h2>{{video.title}} details!</h2>
   <div>
     <label>id: </label>{{video.id}}</div>
-  <h2>{{video.url}} url!</h2>
+  <iframe id="ytplayer" type="text/html" width="640" height="360" [src]="videoUrl" frameborder="0"></iframe>
   <button md-raised-button (click)="goBack()">Back</button>
 </div>
