@@ -16,7 +16,7 @@ import 'rxjs/add/operator/switchMap';
   styleUrls: ['video-detail.component.css']*/
 })
 export class VideoDetailComponent implements OnInit {
-  videoUrl;
+  videoUrl: any;
   constructor(
     private videoService: VideoService,
     private route: ActivatedRoute,
