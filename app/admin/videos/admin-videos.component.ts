@@ -29,9 +29,6 @@ export class AdminVideosComponent implements OnInit  {
   onSelect(video: Video): void {
     this.selectedItem = video;
   }
-  gotoDetail(): void {
-    this.router.navigate(['/detail', this.selectedItem.id]);
-  }
   add(): void {
     if (!this.newItem) { return; }
     this.videoService.create(this.newItem)

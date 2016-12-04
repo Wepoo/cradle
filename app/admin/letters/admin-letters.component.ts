@@ -29,9 +29,6 @@ export class AdminLettersComponent implements OnInit  {
   onSelect(letter: Letter): void {
     this.selectedItem = letter;
   }
-  gotoDetail(): void {
-    this.router.navigate(['/detail', this.selectedItem.id]);
-  }
   add(): void {
     if (!this.newItem) { return; }
     this.letterService.create(this.newItem)

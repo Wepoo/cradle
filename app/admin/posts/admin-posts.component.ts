@@ -29,9 +29,6 @@ export class AdminPostsComponent implements OnInit  {
   onSelect(post: Post): void {
     this.selectedPost = post;
   }
-  gotoDetail(): void {
-    this.router.navigate(['/detail', this.selectedPost.id]);
-  }
   add(): void {
     if (!this.newPost) { return; }
     this.postService.create(this.newPost)
