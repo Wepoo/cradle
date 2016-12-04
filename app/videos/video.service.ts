@@ -7,7 +7,7 @@ import { Video } from './video';
 
 @Injectable()
 export class VideoService {
-   private videosUrl = 'http://localhost:3003/videos';  // URL to web api
+   private videosUrl = 'http://localhost:3003/videos';
 
   constructor(private http: Http) { }
 

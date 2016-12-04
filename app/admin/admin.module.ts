@@ -11,6 +11,7 @@ import { AdminRoutingModule }     from './admin-routing.module';
 import { AdminNavComponent }        from './admin-nav.component';
 import { AdminPostsComponent }      from './posts/admin-posts.component';
 import { AdminVideosComponent }     from './videos/admin-videos.component';
+import { AdminLettersComponent }     from './letters/admin-letters.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { AdminVideosComponent }     from './videos/admin-videos.component';
   declarations: [
     AdminNavComponent,
     AdminPostsComponent,
-    AdminVideosComponent
+    AdminVideosComponent,
+    AdminLettersComponent
   ],
   providers: [],
   bootstrap: [ AdminPostsComponent ]
