@@ -1,9 +1,10 @@
-<div *ngIf="post">
+<div *ngIf="post" class="col-md-8">
   <md-card>
      <md-card-title-group>
         <img md-card-sm-image src="path/to/img.png">
         <md-card-title>{{post.title}}</md-card-title>
-        <md-card-subtitle>{{post.id}}</md-card-subtitle>
+        <md-card-subtitle>{{post.description}}</md-card-subtitle>
+        <md-card-subtitle>{{post.text}}</md-card-subtitle>
      </md-card-title-group>
   </md-card>
   <button (click)="save()">Save</button>

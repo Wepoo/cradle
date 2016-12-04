@@ -6,20 +6,24 @@ import { HttpModule }     from '@angular/http';
 import { AlertModule }    from 'ng2-bootstrap/ng2-bootstrap';
 import { MaterialModule } from '@angular/material';
 
-import { AppRoutingModule }     from '../app-routing.module';
+import { AdminRoutingModule }     from './admin-routing.module';
 
-import { AdminPostsComponent }  from './admin-posts.component';
+import { AdminNavComponent }        from './admin-nav.component';
+import { AdminPostsComponent }      from './posts/admin-posts.component';
+import { AdminVideosComponent }     from './videos/admin-videos.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule,
+    AdminRoutingModule,
     MaterialModule.forRoot()
   ],
   declarations: [
-    AdminPostsComponent
+    AdminNavComponent,
+    AdminPostsComponent,
+    AdminVideosComponent
   ],
   providers: [],
   bootstrap: [ AdminPostsComponent ]

@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Post } from '../posts/post';
-import { PostService } from '../posts/post.service';
+import { Post } from '../../posts/post';
+import { PostService } from '../../posts/post.service';
 
 @Component({
   moduleId: module.id,
