@@ -46,6 +46,6 @@ class WordsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def word_params
-      params.fetch(:word, {})
+      params.require(:word).permit(:name, :letter_id)
     end
 end

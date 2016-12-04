@@ -46,6 +46,6 @@ class LettersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def letter_params
-      params.fetch(:letter, {})
+      params.require(:letter).permit(:name, :position)
     end
 end
