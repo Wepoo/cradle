@@ -7,6 +7,10 @@ import { VideoDetailComponent } from './videos/video-detail.component';
 import { PostDetailComponent }  from './posts/post-detail.component';
 import { AlphabetComponent }      from './alphabet/alphabet.component';
 import { LetterDetailComponent } from './alphabet/letter-detail.component';
+
+import { AdminPostsComponent }      from './admin/admin-posts.component';
+
+
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard',  component: DashboardComponent },
@@ -15,7 +19,8 @@ const routes: Routes = [
   { path: 'videos',     component: VideosComponent },
   { path: 'videos/:id',     component: VideoDetailComponent },
   { path: 'alphabet',     component: AlphabetComponent },
-  { path: 'letters/:id',     component: LetterDetailComponent }
+  { path: 'letters/:id',     component: LetterDetailComponent },
+  { path: 'admin/posts',     component: AdminPostsComponent }
 ];
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],

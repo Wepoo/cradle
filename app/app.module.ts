@@ -7,7 +7,10 @@ import { MaterialModule } from '@angular/material';
 
 import { AppRoutingModule }     from './app-routing.module';
 
+import { AdminModule }         from './admin/admin.module';
+
 import { AppComponent }        from './app.component';
+import { NavComponent }        from './nav.component';
 import { PostDetailComponent }  from './posts/post-detail.component';
 import { DashboardComponent }  from './dashboard.component';
 import { PostsComponent }     from './posts/posts.component';
@@ -25,10 +28,12 @@ import { LetterService }         from './alphabet/letter.service';
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
+    AdminModule
   ],
   declarations: [
     AppComponent,
+    NavComponent,
     DashboardComponent,
     PostDetailComponent,
     PostsComponent,

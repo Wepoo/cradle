@@ -1,10 +1,11 @@
-  <h3>Алфавит</h3>
-  <div class="container">
-    <md-card *ngFor="let letter of letters" class="row letter-card">
-      <md-card-title [routerLink]="['/letters', letter.id]">{{letter.name}} {{letter.name.toLowerCase()}}</md-card-title>
-      <md-card-content *ngIf="letter.major_word">{{letter.major_word.name}}</md-card-content>
-    </md-card>
-  </div>
-  <span class="md-button-wrapper"><ng-content></ng-content></span>
-  <button md-button>FLAT</button>
+<my-nav></my-nav>
+<h3>Алфавит</h3>
+<div class="container">
+  <md-card *ngFor="let letter of letters" class="row letter-card">
+    <md-card-title [routerLink]="['/letters', letter.id]">{{letter.name}} {{letter.name.toLowerCase()}}</md-card-title>
+    <md-card-content *ngIf="letter.major_word">{{letter.major_word.name}}</md-card-content>
+  </md-card>
+</div>
+<span class="md-button-wrapper"><ng-content></ng-content></span>
+<button md-button>FLAT</button>
 

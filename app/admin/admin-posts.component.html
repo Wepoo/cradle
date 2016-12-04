@@ -1,0 +1,22 @@
+<h2>Posts</h2>
+<table class="table">
+<tr *ngFor="let post of posts" (click)="onSelect(post)">
+  <th>{{post.id}}</th>
+  <th>{{post.title}}</th>
+  <th>{{post.description}}</th>
+  <th>{{post.full_text}}</th>
+</tr>
+</table>
+<div *ngIf="selectedPost">
+  <h2>
+    Edit {{selectedPost.title | uppercase}} post
+  </h2>
+  <input [(ngModel)]="selectedPost.title" placeholder="name"/>
+  <button (click)="save()">Save</button>
+</div>
+<div>
+  <label>Post title:</label> <input #postName />
+  <button (click)="add(postName.value); postName.value=''">
+    Add
+  </button>
+</div>
