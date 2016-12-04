@@ -14,12 +14,14 @@ import { PostService } from '../posts/post.service';
 export class AdminPostsComponent implements OnInit  {
   posts: Post[];
   selectedPost: Post;
+  newPost: Post;
 
   constructor(private router: Router, private postService: PostService) {}
 
 
   ngOnInit(): void {
     this.getPosts();
+    this.newPost = new Post;
   }
   getPosts(): void {
     this.postService.getPosts().then(posts => this.posts = posts);
@@ -30,18 +32,17 @@ export class AdminPostsComponent implements OnInit  {
   gotoDetail(): void {
     this.router.navigate(['/detail', this.selectedPost.id]);
   }
-  add(name: string): void {
-    name = name.trim();
-    if (!name) { return; }
-    this.postService.create(name)
+  add(): void {
+    if (!this.newPost) { return; }
+    this.postService.create(this.newPost)
       .then(post => {
         this.posts.push(post);
-        this.selectedPost = null;
+        this.newPost = new Post;
       });
   }
   save(): void {
     this.postService.update(this.selectedPost)
-      .then(() => {});
+      .then(() => this.selectedPost = null);
   }
 
   delete(post: Post): void {
