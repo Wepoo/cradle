@@ -12,7 +12,7 @@
     <tr *ngFor="let word of words" (click)="onSelect(word)">
       <th>{{word.id}}</th>
       <th>{{word.name}}</th>
-      <th>{{getLetter(word.letter_id)}}</th>
+      <!-- <th>{{getLetter(word.letter_id)}}</th> -->
       <th><button md-button (click)="delete(word)">Удалить</button></th>
     </tr>
   </tbody>
@@ -22,6 +22,7 @@
     Редактировать {{selectedItem.name | uppercase}}
   </h2>
   <input [(ngModel)]="selectedItem.name" placeholder="name"/>
+  <input type="file" ng2FileSelect [uploader]="uploader" />
   <button md-button (click)="save()">Save</button>
 </div>
 <div class="row" *ngIf!="selectedItem">

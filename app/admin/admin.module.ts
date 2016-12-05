@@ -2,6 +2,7 @@ import { NgModule }       from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 import { HttpModule }     from '@angular/http';
+import { FileSelectDirective } from 'ng2-file-upload';
 
 import { AlertModule }    from 'ng2-bootstrap/ng2-bootstrap';
 import { MaterialModule } from '@angular/material';
@@ -23,6 +24,7 @@ import { AdminWordsComponent }     from './words/admin-words.component';
     MaterialModule.forRoot()
   ],
   declarations: [
+    FileSelectDirective,
     AdminNavComponent,
     AdminPostsComponent,
     AdminVideosComponent,

@@ -28,6 +28,7 @@
       '@angular/material': 'npm:@angular/material/material.umd.js',
       'moment': 'node_modules/moment/moment.js',
       'ng2-bootstrap/ng2-bootstrap': 'node_modules/ng2-bootstrap/bundles/ng2-bootstrap.umd.js',
+      'ng2-file-upload': 'node_modules/ng2-file-upload/bundles/ng2-file-upload.umd.js',
 
       // other libraries
       'rxjs':                      'npm:rxjs',

@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FileUploader } from 'ng2-file-upload';
 
 import { Word } from '../../alphabet/word';
 import { Letter } from '../../alphabet/letter';
 import { WordService } from '../../alphabet/word.service';
 import { LetterService } from '../../alphabet/letter.service';
+
+const URL = 'http://localhost:3003/words/image_upload';
 
 @Component({
   moduleId: module.id,
@@ -18,6 +21,18 @@ export class AdminWordsComponent implements OnInit  {
   words: Word[];
   selectedItem: Word;
   newItem: Word;
+
+  public uploader:FileUploader = new FileUploader({url: URL});
+  public hasBaseDropZoneOver:boolean = false;
+  public hasAnotherDropZoneOver:boolean = false;
+
+  public fileOverBase(e:any):void {
+    this.hasBaseDropZoneOver = e;
+  }
+
+  public fileOverAnother(e:any):void {
+    this.hasAnotherDropZoneOver = e;
+  }
 
   constructor(private router: Router, private wordService: WordService, private letterService: LetterService) {}
 
@@ -48,6 +63,11 @@ export class AdminWordsComponent implements OnInit  {
       });
   }
   save(): void {
+    this.uploader.onBuildItemForm = (item, form) => {
+      form.append('word_id', this.selectedItem.id);
+      return {item, form} 
+    };
+    this.uploader.uploadAll();
     this.wordService.update(this.selectedItem)
       .then(() => this.selectedItem = null);
   }

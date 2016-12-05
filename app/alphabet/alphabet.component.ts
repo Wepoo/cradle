@@ -25,5 +25,9 @@ export class AlphabetComponent implements OnInit  {
     this.letterService.getLetters().then(letters => this.letters = letters);
   }
 
+  imageUrl(path: string){
+    return 'http://localhost:3003' + path;
+  }
+
 }
 
