@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :words
+  resources :words do
+    post :image_upload, on: :collection
+  end
   resources :letters
   resources :videos
   resources :posts

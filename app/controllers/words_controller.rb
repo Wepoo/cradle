@@ -38,6 +38,14 @@ class WordsController < ApplicationController
     @word.destroy
   end
 
+  def image_upload
+    binding.pry
+    @image = params[:file]
+    @word_id = params[:word_id]
+    Image.create(image: @image, imageable_id: @word_id, imageable_type: 'Word')
+    render json: {}
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_word
