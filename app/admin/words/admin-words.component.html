@@ -12,7 +12,7 @@
     <tr *ngFor="let word of words" (click)="onSelect(word)">
       <th>{{word.id}}</th>
       <th>{{word.name}}</th>
-      <!-- <th>{{getLetter(word.letter_id)}}</th> -->
+      <th>{{word.letter_id}}</th>
       <th><button md-button (click)="delete(word)">Удалить</button></th>
     </tr>
   </tbody>
@@ -21,13 +21,15 @@
   <h2>
     Редактировать {{selectedItem.name | uppercase}}
   </h2>
-  <input [(ngModel)]="selectedItem.name" placeholder="name"/>
+  <input [(ngModel)]="selectedItem.name" placeholder="Название"/>
+  <input [(ngModel)]="selectedItem.letter_id" placeholder="Позиция буквы"/>
   <input type="file" ng2FileSelect [uploader]="uploader" />
   <button md-button (click)="save()">Save</button>
 </div>
 <div class="row" *ngIf!="selectedItem">
   <h2>Добавить слово</h2>
-  <input [(ngModel)]="newItem.name" placeholder="name"/>
+  <input [(ngModel)]="newItem.name" placeholder="Название"/>
+  <input [(ngModel)]="newItem.letter_id" placeholder="Позиция буквы"/>
   <button md-button (click)="add()">
     Добавить
   </button>
