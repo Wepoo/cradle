@@ -1,0 +1,35 @@
+<admin-nav></admin-nav>
+<h2>Буквы</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>№</th>
+      <th>Название</th>
+      <th>Порядковый номер</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let letter of letters" (click)="onSelect(letter)">
+      <th>{{letter.id}}</th>
+      <th>{{letter.name}}</th>
+      <th>{{letter.position}}</th>
+      <th><button md-button (click)="delete(letter)">Удалить</button></th>
+    </tr>
+  </tbody>
+</table>
+<div class="row" *ngIf="selectedItem">
+  <h2>
+    Редактировать {{selectedItem.name | uppercase}}
+  </h2>
+  <input [(ngModel)]="selectedItem.name" placeholder="name"/>
+  <input [(ngModel)]="selectedItem.position" placeholder="описание"/>
+  <button md-button (click)="save()">Save</button>
+</div>
+<div class="row" *ngIf!="selectedItem">
+  <h2>Добавить букву</h2>
+  <input [(ngModel)]="newItem.name" placeholder="name"/>
+  <input [(ngModel)]="newItem.position" placeholder="номер"/>
+  <button md-button (click)="add()">
+    Добавить
+  </button>
+</div>

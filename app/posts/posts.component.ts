@@ -31,25 +31,6 @@ export class PostsComponent implements OnInit  {
   gotoDetail(): void {
     this.router.navigate(['/detail', this.selectedPost.id]);
   }
-  add(name: string): void {
-    name = name.trim();
-    if (!name) { return; }
-    this.postService.create(name)
-      .then(post => {
-        this.posts.push(post);
-        this.selectedPost = null;
-      });
-  }
-
-  delete(post: Post): void {
-    this.postService
-        .delete(post.id)
-        .then(() => {
-          this.posts = this.posts.filter(h => h !== post);
-          if (this.selectedPost === post) { this.selectedPost = null; }
-        });
-  }
-
 
 }
 

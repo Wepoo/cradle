@@ -27,10 +27,10 @@ export class PostService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
 
-  create(title: string): Promise<Post> {
+  create(post: Post): Promise<Post> {
     const url = `${this.postsUrl}/posts/`;
     return this.http
-      .post(url, JSON.stringify({title: title}), {headers: this.headers})
+      .post(url, JSON.stringify({'post': post}), {headers: this.headers})
       .toPromise()
       .then(res => res.json())
       .catch(this.handleError);
@@ -39,7 +39,7 @@ export class PostService {
   update(post: Post): Promise<Post> {
     const url = `${this.postsUrl}/posts/${post.id}`;
     return this.http
-      .put(url, JSON.stringify(post), {headers: this.headers})
+      .put(url, {'post': post}, {headers: this.headers})
       .toPromise()
       .then(() => post)
       .catch(this.handleError);

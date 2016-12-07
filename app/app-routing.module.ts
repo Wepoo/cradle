@@ -7,6 +7,7 @@ import { VideoDetailComponent } from './videos/video-detail.component';
 import { PostDetailComponent }  from './posts/post-detail.component';
 import { AlphabetComponent }      from './alphabet/alphabet.component';
 import { LetterDetailComponent } from './alphabet/letter-detail.component';
+
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard',  component: DashboardComponent },

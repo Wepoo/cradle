@@ -7,7 +7,7 @@ import { Letter } from './letter';
 
 @Injectable()
 export class LetterService {
-   private lettersUrl = 'http://localhost:3003/letters';  // URL to web api
+   private lettersUrl = 'http://localhost:3003/letters';
 
   constructor(private http: Http) { }
 
@@ -26,6 +26,32 @@ export class LetterService {
   }
 
   private headers = new Headers({'Content-Type': 'application/json'});
+
+  create(letter: Letter): Promise<Letter> {
+    const url = `${this.lettersUrl}`;
+    return this.http
+      .post(url, JSON.stringify({'letter': letter}), {headers: this.headers})
+      .toPromise()
+      .then(res => res.json())
+      .catch(this.handleError);
+  }
+
+  update(letter: Letter): Promise<Letter> {
+    const url = `${this.lettersUrl}/${letter.id}`;
+    return this.http
+      .put(url, {'letter': letter}, {headers: this.headers})
+      .toPromise()
+      .then(() => letter)
+      .catch(this.handleError);
+  }
+
+  delete(id: number): Promise<void> {
+    const url = `${this.lettersUrl}/${id}`;
+    return this.http.delete(url, {headers: this.headers})
+      .toPromise()
+      .then(() => null)
+      .catch(this.handleError);
+  }
 
 
   private handleError(error: any): Promise<any> {

@@ -3,55 +3,56 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Video } from './video';
+import { Word } from './word';
 
 @Injectable()
-export class VideoService {
-   private videosUrl = 'http://localhost:3003/videos';
+export class WordService {
+   private wordsUrl = 'http://localhost:3003/words';
 
   constructor(private http: Http) { }
 
-  getVideos(): Promise<Video[]> {
-    return this.http.get(this.videosUrl)
+  getWords(): Promise<Word[]> {
+    return this.http.get(this.wordsUrl)
                .toPromise()
-               .then(response => response.json() as Video[])
+               .then(response => response.json() as Word[])
                .catch(this.handleError);
   }
 
-  getVideo(id: number): Promise<Video> {
-    return this.http.get(this.videosUrl + '/' + id)
+  getWord(id: number): Promise<Word> {
+    return this.http.get(this.wordsUrl + '/' + id)
                .toPromise()
-               .then(response => response.json() as Video)
+               .then(response => response.json() as Word)
                .catch(this.handleError);
   }
 
   private headers = new Headers({'Content-Type': 'application/json'});
 
-  create(video: Video): Promise<Video> {
-    const url = `${this.videosUrl}`;
+  create(word: Word): Promise<Word> {
+    const url = `${this.wordsUrl}`;
     return this.http
-      .post(url, JSON.stringify({'video': video}), {headers: this.headers})
+      .post(url, JSON.stringify({'word': word}), {headers: this.headers})
       .toPromise()
       .then(res => res.json())
       .catch(this.handleError);
   }
 
-  update(video: Video): Promise<Video> {
-    const url = `${this.videosUrl}/${video.id}`;
+  update(word: Word): Promise<Word> {
+    const url = `${this.wordsUrl}/${word.id}`;
     return this.http
-      .put(url, {'video': video}, {headers: this.headers})
+      .put(url, {'word': word}, {headers: this.headers})
       .toPromise()
-      .then(() => video)
+      .then(() => word)
       .catch(this.handleError);
   }
 
   delete(id: number): Promise<void> {
-    const url = `${this.videosUrl}/${id}`;
+    const url = `${this.wordsUrl}/${id}`;
     return this.http.delete(url, {headers: this.headers})
       .toPromise()
       .then(() => null)
       .catch(this.handleError);
   }
+
 
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error);

@@ -1,0 +1,39 @@
+<admin-nav></admin-nav>
+<h2>Posts</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>№</th>
+      <th>Название</th>
+      <th>Описание</th>
+      <th>Текст</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let post of posts" (click)="onSelect(post)">
+      <th>{{post.id}}</th>
+      <th>{{post.title}}</th>
+      <th>{{post.description}}</th>
+      <th>{{post.full_text}}</th>
+      <th><button md-button (click)="delete(post)">Удалить</button></th>
+    </tr>
+  </tbody>
+</table>
+<div class="row" *ngIf="selectedPost">
+  <h2>
+    Edit {{selectedPost.title | uppercase}} post
+  </h2>
+  <input [(ngModel)]="selectedPost.title" placeholder="name"/>
+  <input [(ngModel)]="selectedPost.description" placeholder="описание"/>
+  <input [(ngModel)]="selectedPost.full_text" placeholder="текст"/>
+  <button md-button (click)="save()">Save</button>
+</div>
+<div class="row" *ngIf!="selectedPost">
+  <h2>Добавить пост</h2>
+  <input [(ngModel)]="newPost.title" placeholder="name"/>
+  <input [(ngModel)]="newPost.description" placeholder="описание"/>
+  <input [(ngModel)]="newPost.full_text" placeholder="текст"/>
+  <button md-button (click)="add()">
+    Добавить
+  </button>
+</div>

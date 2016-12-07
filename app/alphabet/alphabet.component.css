@@ -4,3 +4,8 @@
   display:inline-block;
   margin: 15px;
 }
+
+.letter_image {
+  max-height: 200px;
+  max-width: 200px;
+}
