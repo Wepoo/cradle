@@ -23,6 +23,7 @@ import { AlphabetComponent }     from './alphabet/alphabet.component';
 import { LetterDetailComponent } from './alphabet/letter-detail.component';
 import { LetterService }         from './alphabet/letter.service';
 import { WordService }           from './alphabet/word.service';
+import { DrawComponent }          from './drawing_panel/draw.component';
 
 @NgModule({
   imports: [
@@ -43,7 +44,8 @@ import { WordService }           from './alphabet/word.service';
     VideoDetailComponent,
     VideosComponent,
     AlphabetComponent,
-    LetterDetailComponent
+    LetterDetailComponent,
+    DrawComponent
   ],
   providers: [
     PostService,

@@ -25,14 +25,14 @@
   </h2>
   <input [(ngModel)]="selectedPost.title" placeholder="name"/>
   <input [(ngModel)]="selectedPost.description" placeholder="описание"/>
-  <input [(ngModel)]="selectedPost.full_text" placeholder="текст"/>
+  <textarea [(ngModel)]="selectedPost.full_text" placeholder="текст"></textarea>
   <button md-button (click)="save()">Save</button>
 </div>
 <div class="row" *ngIf!="selectedPost">
   <h2>Добавить пост</h2>
   <input [(ngModel)]="newPost.title" placeholder="name"/>
   <input [(ngModel)]="newPost.description" placeholder="описание"/>
-  <input [(ngModel)]="newPost.full_text" placeholder="текст"/>
+  <textarea [(ngModel)]="newPost.full_text" placeholder="текст"></textarea>
   <button md-button (click)="add()">
     Добавить
   </button>

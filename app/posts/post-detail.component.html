@@ -4,9 +4,9 @@
         <img md-card-sm-image src="path/to/img.png">
         <md-card-title>{{post.title}}</md-card-title>
         <md-card-subtitle>{{post.description}}</md-card-subtitle>
-        <md-card-subtitle>{{post.text}}</md-card-subtitle>
+        <md-card-subtitle>{{post.full_text}}</md-card-subtitle>
      </md-card-title-group>
   </md-card>
-  <button (click)="save()">Save</button>
-  <button (click)="goBack()">Back</button>
+  <button md-button>LIKE</button>
+  <button md-button (click)="goBack()">Назад</button>
 </div>

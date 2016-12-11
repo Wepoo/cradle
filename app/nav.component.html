@@ -1,7 +1,14 @@
 <md-toolbar color="primary">
   <md-nav-list>
-    <a md-list-item routerLink="/dashboard" routerLinkActive="active">{{title}}</a>
-    <a md-list-item routerLink="/videos" routerLinkActive="active">Видосики</a>
-    <a md-list-item routerLink="/alphabet" routerLinkActive="active">Алфавит</a>
+    <span class="nav-element" md-list-item routerLink="/dashboard" routerLinkActive="active">
+      {{title}}
+    </span>
+    <span class="nav-element" md-list-item routerLink="/videos" routerLinkActive="active">
+      <img class="nav-img" src="../assets/images/movies.svg">
+      Видосики</span>
+    <span class="nav-element" md-list-item routerLink="/alphabet" routerLinkActive="active">
+      <img class="nav-img" src="../assets/images/english.svg">Алфавит</span>
+    <span class="nav-element" md-list-item routerLink="/drawing" routerLinkActive="active">
+    <img class="nav-img" src="../assets/images/arts.svg">Панель искусств</span>
   </md-nav-list>
 </md-toolbar>

@@ -32,7 +32,20 @@
 
       // other libraries
       'rxjs':                      'npm:rxjs',
-      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
+      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
+      'jquery': 'https://code.jquery.com/jquery.js',
+      'sketch': 'npm:sketch/index.js'
+    },
+    meta: {
+        'angular': {
+            format: 'global',
+            exports: 'angular',
+            deps: ['jquery']
+        },
+        'jquery': {
+            format: 'global',
+            exports: 'jQuery'
+        }
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {

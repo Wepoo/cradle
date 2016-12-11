@@ -1,8 +1,8 @@
 <my-nav></my-nav>
 <div *ngIf="video" class="container">
-  <h2>{{video.title}} details!</h2>
+  <h2>{{video.title}}</h2>
   <div>
-    <label>id: </label>{{video.id}}</div>
+    {{video.description}}</div>
   <iframe id="ytplayer" type="text/html" width="640" height="360" [src]="videoUrl" frameborder="0"></iframe>
   <button md-raised-button (click)="goBack()">Back</button>
 </div>
