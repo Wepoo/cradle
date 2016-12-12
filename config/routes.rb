@@ -5,5 +5,14 @@ Rails.application.routes.draw do
   resources :letters
   resources :videos
   resources :posts
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  
+  post 'users/upload_avatar/', to: 'users#upload_avatar'
+  get 'users/profile', to: 'users#show'
+  put 'users/profile', to: 'users#update'
+  put 'users/ban', to: 'users#ban'
+
+  post :login, to: 'auth#login'
+  post :signup, to: 'auth#signup'
+  post 'auth/:provider', to: 'auth#authenticate'
+  get 'auth/confirm_email', to: 'auth#confirm_email'
 end

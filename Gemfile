@@ -23,6 +23,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors', :require => 'rack/cors'
 
+gem 'jwt'
+
 group :development, :test do
   gem 'pry'
   gem 'byebug', platform: :mri
