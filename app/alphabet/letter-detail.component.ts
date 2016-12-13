@@ -10,7 +10,8 @@ import 'rxjs/add/operator/switchMap';
 @Component({
   moduleId: module.id,
   selector: 'my-letter-detail',
-  templateUrl: 'letter-detail.component.html'
+  templateUrl: 'letter-detail.component.html',
+  styleUrls: ['alphabet.component.css']
 })
 export class LetterDetailComponent implements OnInit {
   constructor(
@@ -26,6 +27,10 @@ export class LetterDetailComponent implements OnInit {
   }
   goBack(): void {
     this.location.back();
+  }
+
+  imageUrl(path: string){
+    return 'http://localhost:3003' + path;
   }
 
   @Input() letter: Letter;

@@ -33,7 +33,7 @@
       // other libraries
       'rxjs':                      'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
-      'jquery': 'https://code.jquery.com/jquery.js',
+      'jquery': 'npm:jquery/dist/jquery.js',
       'sketch': 'npm:sketch/index.js'
     },
     meta: {

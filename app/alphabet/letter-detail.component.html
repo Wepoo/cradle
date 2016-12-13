@@ -4,6 +4,7 @@
   <div *ngIf="letter.words">
     <div *ngFor="let word of letter.words">
       {{word.name}}
+      <img [src]="imageUrl(word.image)" class="letter_image">
     </div>
   </div>
   <button md-raised-button (click)="goBack()">Back</button>
