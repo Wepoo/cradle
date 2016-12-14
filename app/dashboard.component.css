@@ -63,3 +63,59 @@ h4 {
 .post {
   margin: 15px;
 }
+
+.app-title{
+  font-size: 54px;
+  margin-bottom: 20px;
+  font-family: 'Plainscript';
+  font-weight: bold;
+}
+
+.nav-element {
+  height: 100px;
+  width: 350px;
+}
+
+.block {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+
+.alphabet-block {
+  background-color: #bf8514;
+}
+.math-block {
+  background-color: #74365b;
+}
+.draw-block {
+  background-color: #623c04;
+}
+
+.nav_row {
+  position: absolute;
+  top: 5px;
+}
+
+.alphabet_row {
+  background-color: #f8ac00;
+}
+
+.video_row {
+  background-color: #cc0000;
+}
+
+.draw_row {
+  background-color: #996533;
+}
+
+.math_row {
+  background-color: #b12978;
+}
+
+.nav-text {
+  color: white;
+  font-size: 26px;
+  text-align: center;
+}
