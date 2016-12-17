@@ -2,10 +2,10 @@
   <h1>{{letter.name}}  {{letter.name.toLowerCase()}}</h1>
   <label>{{letter.position}}-я буква</label>
   <div *ngIf="letter.words">
-    <div *ngFor="let word of letter.words">
+    <md-card *ngFor="let word of letter.words" class="row letter-card">
       {{word.name}}
       <img [src]="imageUrl(word.image)" class="letter_image">
-    </div>
+    </md-card>
   </div>
   <button md-raised-button (click)="goBack()">Back</button>
 </div>

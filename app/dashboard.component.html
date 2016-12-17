@@ -1,9 +1,14 @@
-<!-- <my-nav></my-nav> -->
+<button md-button class="btn-lg pull-right">
+  <span class="login-btn">Вход</span>
+</button>
+<h1 class="app-title">Cradle</h1>
 <div class="col-md-4">
-  <h1 class="app-title">Cradle</h1>
   <div class="nav-element video_row">
     <span class="" routerLink="/videos" routerLinkActive="active">
-      <img class="nav-img" src="../assets/images/videos.svg"><span class="nav-text">Мультфильмы</span>
+      <div class="block video-block">
+        <img class="nav-img" src="../assets/images/health.svg">
+      </div>
+      <span class="nav-text">Мультфильмы</span>
     </span>
   </div>
   <div class="nav-element alphabet_row">
@@ -33,13 +38,18 @@
 </div>
 
 <div class="col-md-8">
-  <h3>Top Posts</h3>
-  <md-card *ngFor="let post of posts"  [routerLink]="['/posts', post.id]" class="col-md-5 post">
+  <div class="dashboard-header">
+    <div class="dashboard-header__text-content">
+      <h3 class="dashboard-header__text">Популярные произведения</h3>
+    </div>
+  </div>
+  <br>
+  <md-card *ngFor="let post of posts"  [routerLink]="['/posts', post.id]" class="col-md-6">
      <md-card-header>
        <md-card-subtitle>4+</md-card-subtitle>
        <md-card-title>{{post.title}}</md-card-title>
      </md-card-header>
-     <img md-card-image src="../assets/images/movies.svg">
+     <img style="max-width:300px;margin-left:50px;" md-card-image src="../assets/images/movies.svg">
      <md-card-content>
           <p>{{post.description}}</p>
      </md-card-content>

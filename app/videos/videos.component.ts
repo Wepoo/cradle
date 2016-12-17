@@ -8,7 +8,8 @@ import { VideoService } from './video.service';
 @Component({
   moduleId: module.id,
   selector: 'my-videos',
-  templateUrl: 'videos.component.html'
+  templateUrl: 'videos.component.html',
+  styleUrls: ['videos.component.css']
 })
 
 export class VideosComponent implements OnInit  {
@@ -22,6 +23,10 @@ export class VideosComponent implements OnInit  {
   }
   getVideos(): void {
     this.videoService.getVideos().then(videos => this.videos = videos);
+  }
+
+  imageUrl(path: any){
+    return 'http://localhost:3003' + path;
   }
 
 }

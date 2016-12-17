@@ -1,0 +1,14 @@
+.video-card {
+  /*background-image: url(assets/images/masha.jpg);*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 280px;
+  opacity: 1;
+  color: #003300;
+  width: 300px;
+  display: inline-flex;
+  margin: 15px;
+}
+
+.video-text {
+}

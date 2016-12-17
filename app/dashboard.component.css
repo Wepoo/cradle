@@ -60,20 +60,24 @@ h4 {
   }
 }
 
-.post {
-  margin: 15px;
+.login-btn {
+  color: #888;
+  font-size: 30px;
 }
 
 .app-title{
   font-size: 54px;
   margin-bottom: 20px;
+  margin-left: 20px;
   font-family: 'Plainscript';
   font-weight: bold;
 }
 
 .nav-element {
   height: 100px;
-  width: 350px;
+  width: 85%;
+  opacity: 0.8;
+  margin-bottom: 20px;
 }
 
 .block {
@@ -81,6 +85,10 @@ h4 {
   width: 100px;
   height: 100px;
   display: inline-block;
+}
+
+.video-block {
+  background-color: #cc0000;
 }
 
 .alphabet-block {
@@ -103,7 +111,7 @@ h4 {
 }
 
 .video_row {
-  background-color: #cc0000;
+  background-color: #ff5050;
 }
 
 .draw_row {
@@ -118,4 +126,39 @@ h4 {
   color: white;
   font-size: 26px;
   text-align: center;
+}
+
+.dashboard-header {
+  height: 300px;
+  background-image: url(../assets/images/mountain.png);
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  background-position: inherit;
+  position: relative;
+}
+
+.dashboard-header:before {
+  content: "";
+  height: 50px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.36);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.dashboard-header__text-content {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 238px;
+}
+
+.dashboard-header__text {
+  color: white;
 }

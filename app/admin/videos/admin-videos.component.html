@@ -26,6 +26,7 @@
   <input [(ngModel)]="selectedItem.title" placeholder="name"/>
   <input [(ngModel)]="selectedItem.url" placeholder="путь"/>
   <textarea [(ngModel)]="selectedItem.description" placeholder="описание"></textarea>
+  <input type="file" ng2FileSelect [uploader]="uploader" />
   <button md-button (click)="save()">Save</button>
 </div>
 <div class="row" *ngIf!="selectedItem">
@@ -33,6 +34,7 @@
   <input [(ngModel)]="newItem.title" placeholder="name"/>
   <input [(ngModel)]="newItem.url" placeholder="путь"/>
   <textarea [(ngModel)]="newItem.description"></textarea>
+  <input type="file" ng2FileSelect [uploader]="uploader" />
   <button md-button (click)="add()">
     Добавить
   </button>

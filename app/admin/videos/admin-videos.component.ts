@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FileUploader } from 'ng2-file-upload';
 
 import { Video } from '../../videos/video';
 import { VideoService } from '../../videos/video.service';
+
+const URL = 'http://localhost:3003/videos/image_upload';
 
 @Component({
   moduleId: module.id,
@@ -16,8 +19,19 @@ export class AdminVideosComponent implements OnInit  {
   selectedItem: Video;
   newItem: Video;
 
-  constructor(private router: Router, private videoService: VideoService) {}
+  public uploader:FileUploader = new FileUploader({url: URL});
+  public hasBaseDropZoneOver:boolean = false;
+  public hasAnotherDropZoneOver:boolean = false;
 
+  public fileOverBase(e:any):void {
+    this.hasBaseDropZoneOver = e;
+  }
+
+  public fileOverAnother(e:any):void {
+    this.hasAnotherDropZoneOver = e;
+  }
+
+  constructor(private router: Router, private videoService: VideoService) {}
 
   ngOnInit(): void {
     this.getVideos();
@@ -38,6 +52,11 @@ export class AdminVideosComponent implements OnInit  {
       });
   }
   save(): void {
+    this.uploader.onBuildItemForm = (item, form) => {
+      form.append('video_id', this.selectedItem.id);
+      return {item, form} 
+    };
+    this.uploader.uploadAll();
     this.videoService.update(this.selectedItem)
       .then(() => this.selectedItem = null);
   }

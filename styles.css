@@ -26,6 +26,10 @@ body, input[text], button {
 
 @font-face {
   font-family: 'Plainscript';
-  src: url('fonts/plainscript/PlainScriptCTT.woff') format("woff"), url('fonts/plainscript/PlainScriptCTT.ttf"') format("truetype");
+  src: url('assets/fonts/plainscript/PlainScriptCTT.woff') format("woff"), url('assets/fonts/plainscript/PlainScriptCTT.ttf"') format("truetype");
   font-weight: normal;
   font-style: normal; }
+
+.plainscript {
+  font-family: 'Plainscript';
+}

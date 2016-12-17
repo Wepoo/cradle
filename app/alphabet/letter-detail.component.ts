@@ -29,8 +29,8 @@ export class LetterDetailComponent implements OnInit {
     this.location.back();
   }
 
-  imageUrl(path: string){
-    return 'http://localhost:3003' + path;
+  imageUrl(path: any){
+    return 'http://localhost:3003' + path.image;
   }
 
   @Input() letter: Letter;
