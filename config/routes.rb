@@ -3,7 +3,9 @@ Rails.application.routes.draw do
     post :image_upload, on: :collection
   end
   resources :letters
-  resources :videos
+  resources :videos do
+    post :image_upload, on: :collection
+  end
   resources :posts
   
   post 'users/upload_avatar/', to: 'users#upload_avatar'

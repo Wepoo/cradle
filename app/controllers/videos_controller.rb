@@ -5,12 +5,12 @@ class VideosController < ApplicationController
   def index
     @videos = Video.all
 
-    render json: @videos
+    render :index
   end
 
   # GET /videos/1
   def show
-    render json: @video
+    render :show
   end
 
   # POST /videos
@@ -36,6 +36,15 @@ class VideosController < ApplicationController
   # DELETE /videos/1
   def destroy
     @video.destroy
+  end
+
+  def image_upload
+    @image = params[:file]
+    @video_id = params[:video_id]
+    image = Image.find_by(imageable_id: @video_id, imageable_type: 'Video')
+    image.destroy if image
+    Image.create(image: @image, imageable_id: @video_id, imageable_type: 'Video')
+    render json: {}
   end
 
   private
