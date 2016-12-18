@@ -28,6 +28,7 @@ gem 'jwt'
 group :development, :test do
   gem 'pry'
   gem 'byebug', platform: :mri
+  gem 'railroady'
 end
 
 group :development do
