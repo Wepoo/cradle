@@ -1,5 +1,5 @@
 <my-nav></my-nav>
-<h3>Top Video</h3>
+<h3>Лучшее</h3>
 <div class="container">
   <md-card *ngFor="let video of videos"  class="row video-card" [ngStyle]="{'background-image': 'url(' + imageUrl(video.image) + ')'}" [routerLink]="['/videos', video.id]">
     <md-card-title class="video-text">{{video.title}}</md-card-title>

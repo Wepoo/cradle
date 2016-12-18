@@ -23,7 +23,8 @@ import { AlphabetComponent }     from './alphabet/alphabet.component';
 import { LetterDetailComponent } from './alphabet/letter-detail.component';
 import { LetterService }         from './alphabet/letter.service';
 import { WordService }           from './alphabet/word.service';
-import { DrawComponent }          from './drawing_panel/draw.component';
+import { DrawComponent }         from './drawing_panel/draw.component';
+import { LoginDialog }           from './auth/login-dialog.component';
 
 @NgModule({
   imports: [
@@ -45,7 +46,11 @@ import { DrawComponent }          from './drawing_panel/draw.component';
     VideosComponent,
     AlphabetComponent,
     LetterDetailComponent,
-    DrawComponent
+    DrawComponent,
+    LoginDialog
+  ],
+  entryComponents: [
+    LoginDialog
   ],
   providers: [
     PostService,

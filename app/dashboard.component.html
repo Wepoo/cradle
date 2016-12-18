@@ -1,4 +1,4 @@
-<button md-button class="btn-lg pull-right">
+<button md-button class="btn-lg pull-right" (click)="openDialog()">
   <span class="login-btn">Вход</span>
 </button>
 <h1 class="app-title">Cradle</h1>
@@ -49,7 +49,7 @@
        <md-card-subtitle>4+</md-card-subtitle>
        <md-card-title>{{post.title}}</md-card-title>
      </md-card-header>
-     <img style="max-width:300px;margin-left:50px;" md-card-image src="../assets/images/movies.svg">
+     <img style="max-width:200px;margin-left:50px;" md-card-image src="../assets/images/movies.svg">
      <md-card-content>
           <p>{{post.description}}</p>
      </md-card-content>

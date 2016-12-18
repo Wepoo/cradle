@@ -2,9 +2,15 @@
 <h3>Алфавит</h3>
 <div class="container">
   <md-card *ngFor="let letter of letters" class="row letter-card">
-    <md-card-title [routerLink]="['/letters', letter.id]">{{letter.name}} {{letter.name.toLowerCase()}}</md-card-title>
-    <md-card-content *ngIf="letter.major_word">{{letter.major_word.name}}</md-card-content>
-    <img *ngIf="letter.major_word" [src]="imageUrl(letter.major_word.image)" class="letter_image">
+    <div class="container">
+      <div class="row">
+        <h2 [routerLink]="['/letters', letter.id]">{{letter.name}} {{letter.name.toLowerCase()}}</h2>
+      </div>
+      <div class="row" *ngIf="letter.major_word">
+        <div class="pull-left word_name">{{letter.major_word.name}}</div>
+        <img *ngIf="letter.major_word" [src]="imageUrl(letter.major_word.image)" class="pull-right letter_image">
+      </div>
+    </div>
   </md-card>
 </div>
 <span class="md-button-wrapper"><ng-content></ng-content></span>
