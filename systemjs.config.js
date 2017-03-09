@@ -25,7 +25,7 @@
       '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
       '@angular/upgrade': 'npm:@angular/upgrade/bundles/upgrade.umd.js',
       '@angular/upgrade/static': 'npm:@angular/upgrade/bundles/upgrade-static.umd.js',
-      '@angular/material': 'npm:@angular/material/material.umd.js',
+      '@angular/material': 'npm:@angular/material/bundles/material.umd.js',
       'moment': 'node_modules/moment/moment.js',
       'ng2-bootstrap/ng2-bootstrap': 'node_modules/ng2-bootstrap/bundles/ng2-bootstrap.umd.js',
       'ng2-file-upload': 'node_modules/ng2-file-upload/bundles/ng2-file-upload.umd.js',
@@ -34,7 +34,8 @@
       'rxjs':                      'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
       'jquery': 'npm:jquery/dist/jquery.js',
-      'sketch': 'npm:sketch/index.js'
+      'sketch': 'npm:sketch/index.js',
+      'jelly.js': 'npm:jelly.js/js'
     },
     meta: {
         'angular': {

@@ -5,6 +5,7 @@ import { HttpModule }     from '@angular/http';
 
 import { AlertModule }    from 'ng2-bootstrap/ng2-bootstrap';
 import { MaterialModule } from '@angular/material';
+import {} from 'hammerjs';
 
 import { AppRoutingModule }      from './app-routing.module';
 
@@ -25,6 +26,7 @@ import { LetterService }         from './alphabet/letter.service';
 import { WordService }           from './alphabet/word.service';
 import { DrawComponent }         from './drawing_panel/draw.component';
 import { LoginDialog }           from './auth/login-dialog.component';
+import { GamesComponent }         from './games/games.component';
 
 @NgModule({
   imports: [
@@ -47,7 +49,8 @@ import { LoginDialog }           from './auth/login-dialog.component';
     AlphabetComponent,
     LetterDetailComponent,
     DrawComponent,
-    LoginDialog
+    LoginDialog,
+    GamesComponent
   ],
   entryComponents: [
     LoginDialog

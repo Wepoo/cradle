@@ -1,5 +1,5 @@
 import { Component, AfterViewInit } from '@angular/core';
-import {} from 'jquery';
+declare var $: any;
 
 @Component({
   moduleId: module.id,
@@ -18,7 +18,7 @@ export class DrawComponent implements AfterViewInit {
     [3, 5, 10, 15].forEach(function(i, arr) {
       document.getElementById('tools').insertAdjacentHTML('beforeend', "<a href='#colors_sketch' data-size='" + i + "' style='background: #ccc'>" + i + "</a> ");
     });
-    //$('#colors_sketch').sketch();
+    $('#colors_sketch').sketch();
   }
 }
 

@@ -1,5 +1,16 @@
 <my-nav></my-nav>
 <h3>Алфавит</h3>
+<div class="pull-right">
+  <md-menu #appMenu="mdMenu">
+    <button md-menu-item ng-click="filter"> Все </button>
+    <button md-menu-item ng-click="filter"> Гласные </button>
+    <button md-menu-item ng-click="filter"> Согласные </button>
+  </md-menu>
+
+  <button md-icon-button [mdMenuTriggerFor]="appMenu">
+     <md-icon>more_vert</md-icon>
+  </button>
+</div>
 <div class="container">
   <md-card *ngFor="let letter of letters" class="row letter-card">
     <div class="container">

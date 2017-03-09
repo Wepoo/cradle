@@ -8,6 +8,7 @@ import { PostDetailComponent }    from './posts/post-detail.component';
 import { AlphabetComponent }      from './alphabet/alphabet.component';
 import { LetterDetailComponent }  from './alphabet/letter-detail.component';
 import { DrawComponent }          from './drawing_panel/draw.component';
+import { GamesComponent }         from './games/games.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'videos/:id',     component: VideoDetailComponent },
   { path: 'alphabet',     component: AlphabetComponent },
   { path: 'letters/:id',     component: LetterDetailComponent },
-  { path: 'drawing',     component: DrawComponent }
+  { path: 'drawing',     component: DrawComponent },
+  { path: 'games',     component: GamesComponent }
 ];
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
-import { MaterialModule, MdDialog, MdDialogRef, MdDialogConfig } from '@angular/material';  
+import { MaterialModule, MdDialog, MdDialogRef, MdDialogConfig } from '@angular/material';
 
 import { Post } from './posts/post';
 import { PostService } from './posts/post.service';
@@ -37,5 +37,6 @@ export class DashboardComponent implements OnInit {
       this.dialogRef = null;
     });
   }
+
 }
 
