@@ -26,7 +26,9 @@ import { LetterService }         from './alphabet/letter.service';
 import { WordService }           from './alphabet/word.service';
 import { DrawComponent }         from './drawing_panel/draw.component';
 import { LoginDialog }           from './auth/login-dialog.component';
-import { GamesComponent }         from './games/games.component';
+import { GamesComponent }        from './games/games.component';
+import { WindowRefService }      from './helpers/window-ref.service';
+import { JellyCoordsService }    from './helpers/jelly-coords.service';
 
 @NgModule({
   imports: [
@@ -59,7 +61,9 @@ import { GamesComponent }         from './games/games.component';
     PostService,
     VideoService,
     LetterService,
-    WordService
+    WordService,
+    WindowRefService,
+    JellyCoordsService
   ],
   bootstrap: [ AppComponent ]
 })
