@@ -10,9 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161212205722) do
+ActiveRecord::Schema.define(version: 20170205140927) do
 
-  create_table "authorizations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "authorizations", force: :cascade do |t|
     t.string   "provider"
     t.string   "uid"
     t.string   "token"
@@ -23,7 +26,7 @@ ActiveRecord::Schema.define(version: 20161212205722) do
     t.index ["user_id"], name: "index_authorizations_on_user_id", using: :btree
   end
 
-  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "images", force: :cascade do |t|
     t.string   "imageable_type"
     t.integer  "imageable_id"
     t.string   "image"
@@ -31,22 +34,23 @@ ActiveRecord::Schema.define(version: 20161212205722) do
     t.datetime "updated_at",     null: false
   end
 
-  create_table "letters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "letters", force: :cascade do |t|
     t.string   "name"
     t.integer  "position"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "title"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
-    t.text     "full_text",   limit: 65535
-    t.text     "description", limit: 65535
+    t.boolean  "consonant",  default: true
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "posts", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.text     "full_text"
+    t.text     "description"
+  end
+
+  create_table "users", force: :cascade do |t|
     t.string   "email",           default: "", null: false
     t.string   "password_digest", default: "", null: false
     t.string   "username"
@@ -58,15 +62,15 @@ ActiveRecord::Schema.define(version: 20161212205722) do
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
 
-  create_table "videos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "videos", force: :cascade do |t|
     t.string   "title"
     t.string   "url"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.text     "description", limit: 65535
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.text     "description"
   end
 
-  create_table "words", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "words", force: :cascade do |t|
     t.string   "name"
     t.integer  "letter_id"
     t.datetime "created_at", null: false

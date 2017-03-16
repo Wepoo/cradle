@@ -1,4 +1,4 @@
-json.extract! letter, :id, :position, :name
+json.extract! letter, :id, :position, :name, :consonant
 
 unless letter.words.length == 0
   word = letter.words.order("RANDOM()").first
