@@ -1,22 +1,22 @@
 class ApplicationController < ActionController::API
-  
   private
-    def authenticate_user!
-      unauthorized! unless current_user
-    end
 
-    def unauthorized!
-      head :unauthorized
-    end
+  def authenticate_user!
+    unauthorized! unless current_user
+  end
 
-    attr_reader :current_user
+  def unauthorized!
+    head :unauthorized
+  end
 
-    def set_current_user
-      token = request.headers['Authorization'].to_s.split(' ').last
-      return unless token
+  attr_reader :current_user
 
-      payload = Token.new(token)
+  def set_current_user
+    token = request.headers['Authorization'].to_s.split(' ').last
+    return unless token
 
-      @current_user = User.find(payload.user_id) if payload.valid?
-    end
+    payload = Token.new(token)
+
+    @current_user = User.find(payload.user_id) if payload.valid?
+  end
 end
