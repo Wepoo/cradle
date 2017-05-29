@@ -39,13 +39,14 @@ class LettersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_letter
-      @letter = Letter.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def letter_params
-      params.require(:letter).permit(:name, :position, :consonant)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_letter
+    @letter = Letter.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def letter_params
+    params.require(:letter).permit(:name, :position, :consonant)
+  end
 end

@@ -1,5 +1,4 @@
 class SertificatesController < ApplicationController
-
   # GET /sertificates/1
   def show
     pdf = Sertificate.find_by(:id).file
