@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     post :image_upload, on: :collection
   end
   resources :posts
+  resources :sertificates, only: [:create, :show]
   
   post 'users/upload_avatar/', to: 'users#upload_avatar'
   get 'users/profile', to: 'users#show'
