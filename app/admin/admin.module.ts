@@ -5,7 +5,7 @@ import { HttpModule }     from '@angular/http';
 import { FileSelectDirective } from 'ng2-file-upload';
 
 import { AlertModule }    from 'ng2-bootstrap/ng2-bootstrap';
-import { MaterialModule } from '@angular/material';
+import { CustomMaterialModule } from '../commons/custom-material.module';
 
 import { AdminRoutingModule }     from './admin-routing.module';
 
@@ -21,7 +21,7 @@ import { AdminWordsComponent }     from './words/admin-words.component';
     FormsModule,
     HttpModule,
     AdminRoutingModule,
-    MaterialModule.forRoot()
+    CustomMaterialModule
   ],
   declarations: [
     FileSelectDirective,

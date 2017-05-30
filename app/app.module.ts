@@ -4,8 +4,8 @@ import { FormsModule }    from '@angular/forms';
 import { HttpModule }     from '@angular/http';
 
 import { AlertModule }    from 'ng2-bootstrap/ng2-bootstrap';
-import { MaterialModule } from '@angular/material';
 import {} from 'hammerjs';
+import { CustomMaterialModule } from './commons/custom-material.module';
 
 import { AppRoutingModule }      from './app-routing.module';
 
@@ -29,6 +29,7 @@ import { LoginDialog }           from './auth/login-dialog.component';
 import { GamesComponent }        from './games/games.component';
 import { WindowRefService }      from './helpers/window-ref.service';
 import { JellyCoordsService }    from './helpers/jelly-coords.service';
+import { TestsComponent }        from './tests/tests.component';
 
 @NgModule({
   imports: [
@@ -36,8 +37,8 @@ import { JellyCoordsService }    from './helpers/jelly-coords.service';
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    MaterialModule.forRoot(),
     AlertModule,
+    CustomMaterialModule,
     AdminModule
   ],
   declarations: [
@@ -52,7 +53,8 @@ import { JellyCoordsService }    from './helpers/jelly-coords.service';
     LetterDetailComponent,
     DrawComponent,
     LoginDialog,
-    GamesComponent
+    GamesComponent,
+    TestsComponent
   ],
   entryComponents: [
     LoginDialog
